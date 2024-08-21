@@ -14,13 +14,13 @@ with open('../scrape/results.json', 'r', encoding='utf-8') as json_file:
 imdb_dict = defaultdict(list)
 
 # Open and read the TSV file using DictReader for more efficiency
-with open('title.akas.tsv', 'r', encoding='utf-8') as tsv_file:
+with open('../imdb_data/title.akas.tsv', 'r', encoding='utf-8') as tsv_file:
     reader = csv.DictReader(tsv_file, delimiter='\t')
 
     # Iterate over rows in the TSV file
     for row in reader:
-        if row['region'] == 'PT':  # Assuming you have a header and 'PT' is the correct key
-            imdb_id = row['titleId']  # Replace with the actual header name for the IMDb ID
+        if row['region'] == 'PT':
+            imdb_id = row['titleId']
             title = row['title']
             imdb_dict[title].append(imdb_id)
 
