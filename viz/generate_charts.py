@@ -82,7 +82,7 @@ html = template.render({
 })
 
 # Define the output file path
-output_file = 'out_filepath.html'
+output_file = 'jorge.html'
 
 # Write the HTML to the file
 with open(output_file, 'w', encoding="utf-8") as f:
